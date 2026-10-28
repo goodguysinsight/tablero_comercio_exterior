@@ -613,7 +613,7 @@ footer b { color: var(--ink); }
       visualMap: m === 'g' ? { type: 'continuous', min: -40, max: 120, left: 0, bottom: 10, calculable: true, textStyle: { color: css('--ink-2') }, text: ['+120%', '−40%'], inRange: { color: [css('--down'), css('--neu'), css('--up')] }, formatter: (v) => s0(v) + '%' }
         : m === 's' ? { type: 'continuous', min: 0, max: 12, left: 0, bottom: 10, textStyle: { color: css('--ink-2') }, text: ['12%', '0%'], inRange: { color: [mix(css('--panel-2'), css('--accent'), 0.15), css('--accent')] } }
         : { type: 'continuous', min: 1.5, max: Math.log10(mxv), left: 0, bottom: 10, textStyle: { color: css('--ink-2') }, text: ['Mayor', 'Menor'], inRange: { color: [mix(css('--panel-2'), css('--accent'), 0.15), css('--accent')] }, formatter: (v) => f0(10 ** v) },
-      series: [{ type: 'map', map: 'peru', roam: false, top: 10, bottom: 10, itemStyle: { borderColor: css('--panel'), borderWidth: 0.8, areaColor: css('--panel-2') }, emphasis: { label: { show: true, color: css('--ink'), fontSize: 11 }, itemStyle: { areaColor: css('--s2') } }, select: { disabled: true },
+      series: [{ type: 'map', map: 'peru', roam: false, aspectScale: 0.985, layoutCenter: ['55%', '50%'], layoutSize: '96%', itemStyle: { borderColor: css('--panel'), borderWidth: 0.8, areaColor: css('--panel-2') }, emphasis: { label: { show: true, color: css('--ink'), fontSize: 11 }, itemStyle: { areaColor: css('--s2') } }, select: { disabled: true },
         data: RG.map((o) => ({ name: noAcc(o.n), value: metric(o), o })) }] });
     const ord = RG.slice().sort((a, b) => m === 'g' ? (b.g ?? 0) - (a.g ?? 0) : b.v - a.v).reverse();
     draw('g2', { grid: { left: 108, right: 64, top: 10, bottom: 20 },
